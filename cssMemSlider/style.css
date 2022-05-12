@@ -11,6 +11,7 @@ body {
     margin: 0;
     background: linear-gradient(to bottom, rgba(39, 75, 105, 0.3), rgba(39, 75, 105, 0.79));
 }
+
 .wrapper {
     height: 100%;
     display: flex;
@@ -64,20 +65,13 @@ body {
     justify-content: flex-end;
     margin: 0 40px;
 }
-a:link  {
-    width: 15px;
-    height: 15px;
-    background: blue;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
+.dot {
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    margin: 0 0 0.5rem 0;
+    background-color: rgba(0, 0, 0, 0.6);
 }
-a:active {
-    background: rgba(66, 24, 107, 0.75);
-}
-a:hover {
-    background: #00ffce;
+#radio-1:checked ~ #dot-1 {
+    background-color: #00ffce;
 }
 
