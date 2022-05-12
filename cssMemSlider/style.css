@@ -1,0 +1,83 @@
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(to bottom, rgba(39, 75, 105, 0.3), rgba(39, 75, 105, 0.79));
+}
+.wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider {
+    background-color: rgba(0, 0, 0, 0.38);
+    width: 440px;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+    gap: 40px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    margin: 20px;
+}
+
+.slides div {
+    width: 400px;
+    height: 400px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    gap: 20px;
+}
+.slide div {
+    background-color: white;
+}
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 80%;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.text {
+    flex-basis: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+    margin: 0 40px;
+}
+a:link  {
+    width: 15px;
+    height: 15px;
+    background: blue;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 0 0.5rem 0;
+}
+a:active {
+    background: rgba(66, 24, 107, 0.75);
+}
+a:hover {
+    background: #00ffce;
+}
+
