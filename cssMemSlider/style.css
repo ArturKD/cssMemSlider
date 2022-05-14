@@ -11,7 +11,12 @@ body {
     margin: 0;
     background: linear-gradient(to bottom, rgba(39, 75, 105, 0.3), rgba(39, 75, 105, 0.79));
 }
-
+h3{
+    margin: 0;
+}
+input {
+    display: none;
+}
 .wrapper {
     height: 100%;
     display: flex;
@@ -20,58 +25,150 @@ body {
 }
 .slider {
     background-color: rgba(0, 0, 0, 0.38);
-    width: 440px;
-    border-radius: 10px;
+    max-width: 55rem;
+    width: 100%;
+    max-height: 90%;
+    border-radius: 1rem;
 }
 
 .slides {
     display: flex;
-    gap: 40px;
+    gap: 1rem;
     overflow: hidden;
     scroll-behavior: smooth;
-    margin: 20px;
+    margin: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
-.slides div {
-    width: 400px;
-    height: 400px;
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    font-size: 10px;
-    gap: 20px;
-}
-.slide div {
-    background-color: white;
-}
-.image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-basis: 80%;
+.slide {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    background: transparent;
+    display: flex;
+}
+.images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.image {
+    width: 100%;
+    height: 30rem;
+    display: none;
+    border-radius: 1rem;
+    background-color: white;
+    animation-name: fromRight;
+    animation-duration: .2s;
+}
+#texts {
+    height: 5rem;
+    max-width: 45%;
 }
 .text {
-    flex-basis: 10%;
+    display: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    animation-name: fromTop;
+    animation-duration: .3s;
+    color: white;
+
+}
+.dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    user-select: none;
+}
+.label:hover .dot {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.label:active .dot {
+    background-color: rgb(255, 221, 0);
+}
+.labels {
+    width: fit-content;
+    height: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-basis: 45%;
+}
+.label {
+    height: 2rem;
+    width: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.links {
-    display: flex;
-    gap: 5px;
-    justify-content: flex-end;
-    margin: 0 40px;
-}
-.dot {
-    width: 20px;
-    height: 20px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-#radio-1:checked ~ #dot-1 {
-    background-color: #00ffce;
+    cursor: pointer;
 }
 
+#radio-1:checked ~#labels #label-1 .dot,
+#radio-2:checked ~#labels #label-2 .dot,
+#radio-3:checked ~#labels #label-3 .dot,
+#radio-4:checked ~#labels #label-4 .dot,
+#radio-5:checked ~#labels #label-5 .dot {
+    background-color: rgba(5, 133, 238, 1);
+}
+
+#radio-1:checked ~#texts #text-1,
+#radio-2:checked ~#texts #text-2,
+#radio-3:checked ~#texts #text-3,
+#radio-4:checked ~#texts #text-4,
+#radio-5:checked ~#texts #text-5 {
+    display: flex;
+}
+
+#radio-1:checked ~#images #image-1,
+#radio-2:checked ~#images #image-2,
+#radio-3:checked ~#images #image-3,
+#radio-4:checked ~#images #image-4,
+#radio-5:checked ~#images #image-5 {
+    display: flex;
+}
+@media (max-width: 768px) {
+    .slider {
+        margin: 10px;
+    }
+    .slides {
+        flex-direction: column;
+    }
+    .images {
+        order: 0;
+    }
+    .image {
+        width: 100%;
+        height: fit-content;
+    }
+    .labels {
+        width: 100%;
+        justify-content: center;
+        order: 1;
+    }
+    #texts {
+        order: 3;
+        max-width: 100%;
+        height: 6rem;
+    }
+}
+
+@keyframes fromRight {
+    from {
+        margin: 0 -100rem 0 0;
+    }
+    to {
+        margin: 0;
+    }
+}
+
+@keyframes fromTop {
+    from {
+        margin: -100vh 0 0 0;
+    }
+    to {
+        margin: 0;
+    }
+}
